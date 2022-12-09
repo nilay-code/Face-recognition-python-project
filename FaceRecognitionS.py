@@ -50,6 +50,14 @@ while True:
             cv2.rectangle(img, (x1+10, y1+10), (x2+10, y2+10), (0, 255, 0),2)
             cv2.rectangle(img,(x1+10,y2-25),(x2+10,y2+10),(0,255,0),cv2.FILLED)
             cv2.putText(img,name,(x1+16,y2+4),cv2.FONT_HERSHEY_COMPLEX,1,(255,255,255),2)
+        else:
+            print("Unknown")
+            y1, x2, y2, x1 = faceLoc
+            y1, x2, y2, x1 = y1 * 4, x2 * 4, y2 * 4, x1 * 4
+
+            cv2.rectangle(img, (x1 + 10, y1 + 10), (x2 + 10, y2 + 10), (0, 255, 0), 2)
+            cv2.rectangle(img, (x1 + 10, y2 - 25), (x2 + 10, y2 + 10), (0, 255, 0), cv2.FILLED)
+            cv2.putText(img, "Unknown", (x1 + 16, y2 + 4), cv2.FONT_HERSHEY_COMPLEX, 1, (255, 255, 255), 2)
 
     cv2.imshow('Webcam',img)
     cv2.waitKey(1)
